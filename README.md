@@ -32,7 +32,7 @@ This code can be found in the folder (TODO)
 
 z88dk was used to create the program to run the LLM on a Z80. It works as described above by using space on a connected disk drive as memory for matrices and the paged SRAM as cache for that memory. To load the parameters, a filesystem partition is also present on the disk. My choice of filesystem is, of course, ext4, to further modernize the software design. Only basic filesystem read access is supported, but code to handle checksum checking and symlink parsing is present and can be enabled, if required. This allows easy copying and modification of the network parameters on the disk from any common Linux distro!
 
-Standard IEEE 32-bit floats are used for computation. I did experiment with 16-bit floats and fixed-point numbers, but they produced completely broken results due to precission errors. So floats are used, for maximum compatibility! Though, one optimization I did make use of is LUTs. Notably, the GeLU nonlinearity is implement through a LUT in a file, which I found to be faster.
+Standard IEEE 32-bit floats are used for computation. I did experiment with 16-bit floats and fixed-point numbers, but they produced completely broken results due to precission errors. So floats are used, for maximum compatibility! Though, one optimization I did make use of is LUTs. Notably, the GeLU nonlinearity is implemented through a LUT in a file, which I found to be faster.
 
 A byte-pair-encoder almost identical to the one used in GPT-2 is used for tokenization. I will admit, the code I wrote for it is not the best, but it successfully runs on the Z80, so I am happy with it. It also uses data stored on the filesystem to do the encoding.
 
