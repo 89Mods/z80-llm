@@ -23,7 +23,7 @@ This code can be found in the folder (TODO)
 ## Standalone C program
 
 I started out by writing a standalone, single file C program on my desktop PC that can run the LLM, to have a working reference point when writing the code for the Z80.
-Still, this program already contains key aspects of what is required on the Z80, such parsing parameters from files and emulating matrices being stored in a block device.
+Still, this program already contains key aspects of what is required on the Z80, such as parsing parameters from files and emulating matrices being stored in a block device.
 The resulting code only depends on the standard library and compiles into a tiny executable on Linux.
 
 This code can be found in the folder (TODO)
