@@ -12,13 +12,13 @@ The demo hardware consist only of a Z80, 32KiB of ROM and some SRAM. 32KiB is no
 
 Two UARTs are provided: one for standard output and a second to print a verbose log.
 
-The schematics and PCB layout files can be found in the folder (TODO)
+The schematics and PCB layout files can be found in the folder `Hardware`.
 
 ## LLM
 
 The code to pre-train the LLM was written using libtorch in C++, using custom code for implementation of the attention layers, to make translating it into standalone C easier. This code was then supplied with a dataset of book texts and trained on a cloud compute instance containing a RTX4090 that was fed a large budget of 27.16$. The resulting LLM is good enough at generating basic, coherent text for the purposes of demonstration.
 
-This code can be found in the folder (TODO)
+This code can be found in the folder `libtorch_llm`.
 
 ## Standalone C program
 
@@ -26,7 +26,7 @@ I started out by writing a standalone, single file C program on my desktop PC th
 Still, this program already contains key aspects of what is required on the Z80, such as parsing parameters from files and emulating matrices being stored in a block device.
 The resulting code only depends on the standard library and compiles into a tiny executable on Linux.
 
-This code can be found in the folder (TODO)
+This code can be found in the folder `c_pgm`.
 
 ## Z80 Firmware
 
@@ -38,7 +38,7 @@ A byte-pair-encoder almost identical to the one used in GPT-2 is used for tokeni
 
 Note: the resulting code does not fit into the 32KiB ROM. To work around this, the CPU copies some blocks from the disk to SRAM at bootup, allowing code to overflow into RAM. Any code changes require not only re-programming of the ROM, but also an update of the disk image. I apologize for this inconvenience.
 
-This code can be found in the folder (TODO)
+This code can be found in the folder `Z80`.
 
 # Speed
 
