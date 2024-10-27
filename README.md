@@ -34,6 +34,8 @@ z88dk was used to create the program to run the LLM on a Z80. It works as descri
 
 Standard IEEE 32-bit floats are used for computation. I did experiment with 16-bit floats and fixed-point numbers, but they produced completely broken results due to precission errors. So floats are used, for maximum compatibility!
 
+A byte-pair-encoder almost identical to the one used in GPT-2 is used for tokenization. I will admit, the code I wrote for it is not the best, but it successfully runs on the Z80, so I am happy with it. It also uses data stored on the filesystem to do the encoding.
+
 Note: the resulting code does not fit into the 32KiB ROM. To work around this, the CPU copies some blocks from the disk to SRAM at bootup, allowing code to overflow into RAM. Any code changes require not only re-programming of the ROM, but also an update of the disk image. I apologize for this inconvenience.
 
 This code can be found in the folder (TODO)
