@@ -7,7 +7,7 @@ void main() {
 	FILE* bootloaderfile = fopen("./bootloader.bin", "rb");
 	FILE* bootfile = fopen("./boot.bin", "rb");
 	FILE* romfile = fopen("./EPROM.bin", "wb");
-	FILE* diskfile = fopen("/home/tholin/disk.img", "rb+");
+	FILE* diskfile = fopen("../disk.img", "rb+");
 	if(!bootfile || !romfile || !diskfile) {
 		printf("Could not open required files!\r\n");
 		exit(1);
