@@ -432,7 +432,7 @@ void feed_forward(ext4_FIL* in_params, ext4_FIL* out_params) {
 	}
 	disable_text_buffer();
 	newl();
-	disable_text_buffer();
+	enable_text_buffer();
 	//Add bias
 	ret = ext4_seek(out_params, 2048UL*1024UL*4UL);
 	if(ret != EXT4_OKAY) ferr();
